@@ -23,22 +23,23 @@
 </head>
 <body>
 
-  <div class="container mt-5 shadow" >
+  <div class="container mt-5 shadow"  >
     <h2 class="text-center mb-4">Add Your Recipe</h2>
-    <form enctype="multipart/form-data">
+    <form enctype="multipart/form-data" method="post" >
+         {% csrf_token %} 
       <div class="mb-3">
         <label for="recipeName" class="form-label">Recipe Name</label>
-        <input type="text" class="form-control" id="recipeName" placeholder="e.g., Paneer Butter Masala">
+        <input   name="recipe_name" type="text" class="form-control" id="recipeName" placeholder="e.g., Paneer Butter Masala">
       </div>
 
       <div class="mb-3">
-        <label for="recipeDescription" class="form-label">Recipe Description</label>
-        <textarea class="form-control" id="recipeDescription" rows="4" placeholder="Describe the recipe steps, ingredients, etc."></textarea>
+        <label for="recipeDescription"   class="form-label">Recipe Description</label>
+        <input name="recipe_description"  class="form-control" id="recipeDescription" rows="4" placeholder="Describe the recipe steps, ingredients, etc."></textarea>
       </div>
 
       <div class="mb-3">
         <label for="recipeFile" class="form-label">Upload Recipe File (image, PDF, etc.)</label>
-        <input class="form-control" type="file" id="recipeFile" accept="image/*,.pdf,.doc,.docx,.txt">
+        <input  name="recipe_image" class="form-control" type="file" id="recipeFile" accept="image/*,.pdf,.doc,.docx,.txt">
       </div>
 
       <button type="submit" class="btn btn-success w-100">Add Recipe</button>
