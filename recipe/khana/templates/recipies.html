@@ -29,12 +29,12 @@
          {% csrf_token %} 
       <div class="mb-3">
         <label for="recipeName" class="form-label">Recipe Name</label>
-        <input   name="recipe_name" type="text" class="form-control" id="recipeName" placeholder="e.g., Paneer Butter Masala">
+        <input  Required name="recipe_name" type="text" class="form-control" id="recipeName" placeholder="e.g., Paneer Butter Masala">
       </div>
 
       <div class="mb-3">
         <label for="recipeDescription"   class="form-label">Recipe Description</label>
-        <input name="recipe_description"  class="form-control" id="recipeDescription" rows="4" placeholder="Describe the recipe steps, ingredients, etc."></textarea>
+        <input Required name="recipe_description"  class="form-control" id="recipeDescription" rows="4" placeholder="Describe the recipe steps, ingredients, etc."></textarea>
       </div>
 
       <div class="mb-3">
@@ -44,6 +44,35 @@
 
       <button type="submit" class="btn btn-success w-100">Add Recipe</button>
     </form>
+ 
+
+    <h2 class="mb-4 text-center">Sample Bootstrap Table</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover shadow">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Recipe Name</th>
+            <th>Recipe Description</th>
+            <th>Image</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        {% for recipe in recipies %}
+        <tbody>
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            
+            <td>{{ recipe.recipe_name }}</td>
+            <td>{{ recipe.recipe_description }}</td>
+            <td>{{ recipe.recipe_image }}</td>
+          
+          
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Optional: Bootstrap Bundle JS -->

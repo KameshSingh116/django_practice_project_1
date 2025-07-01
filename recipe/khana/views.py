@@ -21,5 +21,9 @@ def recipies(request):
       )
 
       return redirect('/recipies')
+    queryset=recipe.objects.all()
+    context={'recipies':queryset}
 
-    return render(request, "recipies.html")
+
+    return render(request, "recipies.html",context)
+       
