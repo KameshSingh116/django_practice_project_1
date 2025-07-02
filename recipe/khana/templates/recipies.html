@@ -55,7 +55,7 @@
             <th>Recipe Name</th>
             <th>Recipe Description</th>
             <th>Image</th>
-            <th>Location</th>
+            <th>Actions</th>
           </tr>
         </thead>
         {% for recipe in recipies %}
@@ -65,8 +65,11 @@
             
             <td>{{ recipe.recipe_name }}</td>
             <td>{{ recipe.recipe_description }}</td>
-            <td>{{ recipe.recipe_image }}</td>
-          
+            <td>
+              <img src="/media/{{ recipe.recipe_image }}" style="height : 100px"></td>
+            <td>
+            <button class="btn btn-danger">Delete </button>
+            </td>
           
           </tr>
           {% endfor %}
