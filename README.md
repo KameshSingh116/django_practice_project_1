@@ -1,5 +1,9 @@
 # django_practice_project_1
 This is the first project which i am going to make using django to practice what i have learned in django so far
+
+For any doubts clarification you may refer to the other github repo with course of django.
+- https://github.com/KameshSingh116/djangoo_course
+
 To connect the frontend to the backend , we need to use a method which is actually a post method.
 
 - method="post"
