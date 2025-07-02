@@ -23,7 +23,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('', home),
     path('admin/', admin.site.urls),
-    path('recipies/', recipies,name="recipies")
+    path('recipies/', recipies,name="recipies"),
+    path('delete_recipe/<id>/', delete_recipe,name="delete_recipe")
    
 ] 
     

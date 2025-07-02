@@ -26,4 +26,8 @@ def recipies(request):
 
 
     return render(request, "recipies.html",context)
-       
+
+def delete_recipe(request, id):
+      queryset=recipe.objects.get(id = id)
+      queryset.delete()
+      return redirect('/recipies/')
